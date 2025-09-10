@@ -179,7 +179,8 @@ nav a:focus::after {
     padding: 0 10%;
     grid-template-areas:
     "title title"
-    "intro picture";
+    "intro picture"
+    "bottom-title bottom-title";
 }
 
 #about-me-title {
@@ -207,7 +208,7 @@ nav a:focus::after {
 }
 
 #introduction-container p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     text-align: center;
     max-width: 600px;
 }
@@ -215,6 +216,7 @@ nav a:focus::after {
 #profile-picture-container {
     grid-area: picture;
     width: 20vw;
+    height: auto;
 }
 
 .responsive-img {
@@ -232,6 +234,12 @@ nav a:focus::after {
 
 .responsive-img:hover {
     border-color: var(--spice-glow);
+}
+
+#introduction-bottom-title {
+    grid-area: bottom-title;
+    font-size: 1rem;
+    border: 1px solid var(--sandworm-shadow);
 }
 
 @media (max-width: 640px) {

@@ -22,6 +22,11 @@ h1, h2, p {
     color: var(--melange-mist)
 }
 
+h1 {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+}
+
 html {
     font-size: 16px;
     scroll-behavior: smooth;
@@ -79,9 +84,12 @@ header {
 }
 
 /* Active state – when you’re on the contact page */
-#header-button.active {
-  background-color: #A8DADC;    /* Melange Mist – cool contrast */
-  color: #2B2D42;               /* keep text readable */
+#header-button:active {
+  background-color: #A8DADC;
+  color: #2B2D42;
+    transform: translateY(2px, 1px,);
+
+    
 }
 
 /* Optional: keyboard‑focus outline for accessibility */
@@ -158,11 +166,11 @@ nav a:focus::after {
   );
     height: 100vh;
     display: grid;
+    column-gap: 1.4rem;
+    padding: 0 10%;
     grid-template-areas:
-        ". title title title title ."
-        ". . intro picture . ."
-        ". . intro picture . ."
-        ". . . . . .";
+    "title title"
+    "intro picture";
 }
 
 #about-me-title {
@@ -176,25 +184,45 @@ nav a:focus::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 80vh;
 }
 
 #introduction-container {
     grid-area: intro;
 }
 
+#introduction-container h2 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+#introduction-container p {
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 600px;
+}
+
 #profile-picture-container {
     grid-area: picture;
-    height: 80vh;
     width: 20vw;
 }
 
 .responsive-img {
     max-width: 100%;      /* fit within parent width */
     height: auto;         /* keep aspect ratio */
+    min-width: 300px;    /* minimum size */
     display: block;       /* eliminates inline‑element whitespace */
     margin-left: auto;
     margin-right: auto;   /* optional centering */
     border-radius: 30%;
+    border-color: var(--fremen-night);
+    border: 4px solid;
+    transition: border-color 0.25s ease;
+}
+
+.responsive-img:hover {
+    border-color: var(--spice-glow);
 }
 
 @media (max-width: 640px) {

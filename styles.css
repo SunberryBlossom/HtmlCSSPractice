@@ -37,7 +37,26 @@ header {
 }
 
 #about-me-container {
-    border: 2px solid purple;
+    border: 4px solid purple;
     height: 800px;
     display: grid;
+    grid-template-areas:
+        "title title"
+        "intro picture"
+        "intro picture";
+}
+
+#about-me-title {
+    border: 4px solid orange;
+    grid-area: title;
+}
+
+#introduction-container {
+    border: 4px solid brown;
+    grid-area: intro;
+}
+
+#profile-picture-container {
+    border: 4px solid pink;
+    grid-area: picture;
 }

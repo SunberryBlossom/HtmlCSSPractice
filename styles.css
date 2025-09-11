@@ -332,7 +332,15 @@ nav a:focus::after {
     grid-area: objective;
 }
 
-.project-container {
+#experience-container, #skill-container, #objective-container {
+    color: var(--spice-glow);
+    margin-top: 0;
+  text-align: center;
+  height: auto;
+  top: 0.1rem;
+}
+
+#project-container {
     padding: 1.5rem;
   background: linear-gradient(
     90deg,                    
@@ -340,19 +348,66 @@ nav a:focus::after {
     var(--imperial-steel) 45%,               
     var(--arrakeen-sand) 100%            
   );
-  height: 100vh;
-}
-
-.project-container h1 {
-  text-align: center;
-}
-
-#experience-container, #skill-container, #objective-container {
-    color: var(--spice-glow);
-    margin-top: 0;
-  text-align: center;
+  min-height: 100vh;
   height: auto;
-  top: 0.1rem;
+  display: grid;
+    grid-template-areas:
+    "title title title title"
+    "one two three four"
+    "five six seven eight";
+    gap: 2rem;
+  justify-items: center;
+}
+
+#proj-title {
+  text-align: center;
+  grid-area: title;
+}
+
+.project {
+  background-color: var(--fremen-night);
+  border: 2px solid var(--imperial-steel);
+  border-radius: 15px;
+  height: 350px;
+  width: 350px;
+}
+
+.project:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+#proj1 {
+  grid-area: one;
+}
+
+#proj2 {
+  grid-area: two;
+}
+
+#proj3 {
+  grid-area: three;
+}
+
+#proj4 {
+  grid-area: four;
+}
+
+#proj5 {
+  grid-area: five;
+}
+
+#proj6 {
+  grid-area: six;
+}
+
+#proj7 {
+  grid-area: seven;
+}
+
+#proj8 {
+  grid-area: eight;
 }
 
 footer {
@@ -363,6 +418,28 @@ footer {
 footer p {
     color: var(--spice-glow);
     text-align: center;
+}
+
+@media (max-width: 1550px) {
+  #project-container {
+    grid-template-areas:
+    "title title title"
+    "one two three"
+    "four five six"
+    "seven eight .";
+  }
+}
+
+@media (max-width: 1300px) {
+  #project-container {
+    grid-template-areas:
+    "title title"
+    "one two"
+    "three four"
+    "five six"
+    "seven eight";
+  }
+  
 }
 
 @media (max-width: 1200px) {
@@ -461,6 +538,20 @@ nav a::after {
   #about-me-title {
     font-size: 2.5rem;
     margin-top: 1rem;
+  }
+
+  #project-container {
+    grid-template-areas:
+    "title "
+    "one "
+    "two "
+    "three "
+    "four "
+    "five "
+    "six "
+    "seven "
+    "eight ";
+    justify-items: center;
   }
 
 }

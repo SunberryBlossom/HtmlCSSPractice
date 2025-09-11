@@ -244,6 +244,13 @@ nav a:focus::after {
 }
 
 #resume-container {
+  display: grid;
+  grid-template-areas: 
+    "title title title"
+    "experience skills objective";
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2rem;
+  justify-items: center;
     padding: 1.5rem;
   height: 60vh;        
   background: radial-gradient(circle at 50% 30%, #0b0c2a, #000000 80%);
@@ -252,6 +259,32 @@ nav a:focus::after {
 .resume-container h1 {
     color: var(--spice-glow);
     text-align: center;
+    grid-area: title;
+}
+
+#experience-container, #skill-container, #objective-container {
+  width: 20vw;
+  height: 100%;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: var(--fremen-night);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  align-self: center;
+  top: -100px;
+  position: relative;
+}
+
+#experience-container {
+    grid-area: experience;
+}
+
+#skill-container {
+    grid-area: skills;
+}
+
+#objective-container {
+    grid-area: objective;
 }
 
 .project-container {

@@ -310,6 +310,11 @@ nav a:focus::after {
   transition: all 0.3s ease;
 }
 
+
+#experience-container p,  #objective-container p {
+    text-align: justify;
+}
+
 #experience-container:hover, #skill-container:hover, #objective-container:hover {
     transform: translateY(-5px);
     transition: all 0.3s ease;
@@ -441,6 +446,10 @@ nav a::after {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#experience-container p,  #objective-container p {
+    text-align: inherit;
 }
 
   #experience-container, #skill-container, #objective-container {
